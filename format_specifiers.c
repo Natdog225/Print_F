@@ -33,5 +33,7 @@ int handle_string(va_list args)
 
 int handle_char(va_list args)
 {
-	
+	char c = va_arg(args, int); /* pulls in the character argument*/
+	_putchar(c); /* prints the character*/
+	return (1); /* Returns the number of printed characters.*/
 }
