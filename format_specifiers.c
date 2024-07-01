@@ -99,17 +99,17 @@ int handle_r(va_list args)
 		str = "(null)";
 	}
 
-	// Calculate the length of the string (excluding the null terminator)
+	/* Calculate the length of the string (excluding the null terminator) */
 	while (str[len] != '\0')
 	{
 		len++;
 	}
 
-	// Print the string in reverse order
+	/* Print the string in reverse order */
 	for (i = len - 1; i >= 0; i--)
 	{
 		_putchar(str[i]);
 	}
 
-	return len; // Return the number of characters printed
+	return len;
 }
