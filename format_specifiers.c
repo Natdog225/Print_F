@@ -63,7 +63,7 @@ int handle_int(va_list args)
 		_putchar('-');
 		if (num == INT_MIN)
 		{
-			num_abs = (unsigned int)(INT_MAX) + 1; /*handles the INT_MIN special*/
+			num_abs = ((unsigned int)(INT_MAX) + 1); /*handles the INT_MIN special*/
 		}
 		else
 		{
@@ -75,7 +75,7 @@ int handle_int(va_list args)
 	{
 		num_abs = num;
 	}
-	
+
 	while (num != 0) /*convert the int to a string in reverse order*/
 	{
 		buffer[i++] = (num % 10) + '0';
