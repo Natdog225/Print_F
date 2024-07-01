@@ -34,9 +34,9 @@ int _printf(const char *format, ...)
 				}
 			}
 			else if (format[i] == 'd')
-            {
-                count += handle_int(args);
-            }
+			{
+				count += handle_int(args);
+			}
 			else if (format[i] == '%')
 			{
 				count += _putchar('%');
@@ -48,6 +48,10 @@ int _printf(const char *format, ...)
 			}
 
 			i++;
+		}
+		else if (format[i] == 'S')
+		{
+			count += _putchar(format[i]);
 		}
 		else
 		{
