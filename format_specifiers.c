@@ -13,7 +13,7 @@
 
 int handle_string(va_list args)
 {
-	char *str = va_arg(args char *); /* gets the string argument*/
+	char *str = va_arg(args, char *); /* gets the string argument*/
 	int i; /*loop counter*/
 
 	if (str == NULL)
