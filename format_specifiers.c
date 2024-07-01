@@ -14,7 +14,7 @@
 int handle_string(va_list args)
 {
 	char *str = va_arg(args, char *); /* gets the string argument*/
-	int i; /*loop counter*/
+	int i;							  /*loop counter*/
 
 	if (str == NULL)
 		str = "(null)"; /*handles the null string*/
@@ -34,8 +34,8 @@ int handle_string(va_list args)
 int handle_char(va_list args)
 {
 	char c = va_arg(args, int); /* pulls in the character argument*/
-	_putchar(c); /* prints the character*/
-	return (1); /* Returns the number of printed characters.*/
+	_putchar(c);				/* prints the character*/
+	return (1);					/* Returns the number of printed characters.*/
 }
 
 /**
@@ -81,10 +81,35 @@ int handle_int(va_list args)
 		buffer[i++] = (num_abs % 10) + '0';
 		num_abs /= 10;
 	}
-	for (j = i -1; j >= 0; j--) /* print the string in correct order*/
+	for (j = i - 1; j >= 0; j--) /* print the string in correct order*/
 	{
 		_putchar(buffer[j]);
 		count++;
 	}
 	return (count); /*return the number of printed char, includes negative sign if present*/
+}
+int handle_r(va_list args)
+{
+	char *str = va_arg(args, char *);
+	int len = 0;
+	int i;
+
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+
+	// Calculate the length of the string (excluding the null terminator)
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+
+	// Print the string in reverse order
+	for (i = len - 1; i >= 0; i--)
+	{
+		_putchar(str[i]);
+	}
+
+	return len; // Return the number of characters printed
 }
