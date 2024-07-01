@@ -63,6 +63,7 @@ int handle_int(va_list args)
 		_putchar('2');
 		num = 147483648; /* handles special case num is INT_MIN */
 		negative = 1;
+		count += 2; /* acouunts for - and 2.*/
 	}
 
 	else if (num < 0) /* handles the negative ints by printing -, makes the num positve */
@@ -70,6 +71,7 @@ int handle_int(va_list args)
 		_putchar('-');
 		negative = 1;
 		num = -num;
+		count += 1; /* accounts for -*/
 	}
 	while (num != 0) /*convert the int to a string in reverse order*/
 	{
