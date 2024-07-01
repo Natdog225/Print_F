@@ -16,43 +16,46 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
+		if (format[i] == '%')
 		{
-			i++;
-			if (format[i] == 'c')
+			if (format[i + 1] != '\0')
 			{
-				count += _putchar(va_arg(args, int));
-			}
-			else if (format[i] == 's')
-			{
-				char *str = va_arg(args, char *);
-				if (str == NULL)
-					str = "(null)";
-				while (*str != '\0')
+				i++;
+				if (format[i] == 'c')
 				{
-					count += _putchar(*str++);
+					count += _putchar(va_arg(args, int));
 				}
-			}
-			else if (format[i] == 'd')
-			{
-				count += handle_int(args);
-			}
-			else if (format[i] == '%')
-			{
-				count += _putchar('%');
+				else if (format[i] == 's')
+				{
+					char *str = va_arg(args, char *);
+					if (str == NULL)
+						str = "(null)";
+					while (*str != '\0')
+					{
+						count += _putchar(*str++);
+					}
+				}
+				else if (format[i] == 'd')
+				{
+					count += handle_int(args);
+				}
+				else if (format[i] == '%')
+				{
+					count += _putchar('%');
+				}
+				else
+				{
+					count += _putchar('%');
+					count += _putchar(format[i]);
+				}
+
+				i++;
 			}
 			else
 			{
-				count += _putchar('%');
 				count += _putchar(format[i]);
+				i++;
 			}
-
-			i++;
-		}
-		else
-		{
-			count += _putchar(format[i]);
-			i++;
 		}
 	}
 
