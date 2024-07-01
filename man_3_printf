@@ -1,0 +1,40 @@
+AME
+    _printf - formatted output conversion
+
+SYNOPSIS
+    #include "main.h"
+
+    int _printf(const char *format, ...);
+
+DESCRIPTION
+    _printf produces output according to a format string, which is written to the standard output (stdout). It supports various format specifiers for different data types.
+
+FORMAT SPECIFIERS
+    %c  Print a single character.
+    %s  Print a string of characters.
+    %d  Print a decimal integer.
+    %i  Print an integer in base 10.
+    %%  Print a percent sign.
+    %r  Print a string in reverse order. (Custom specifier)
+    ...
+
+RETURN VALUE
+    Upon successful completion, _printf returns the number of characters printed 
+	(excluding the null byte used to end output to strings). 
+	If an output error is encountered, a negative value is returned.
+
+ERRORS
+    _printf may fail if:
+
+    * An invalid format specifier is encountered.
+    * There is insufficient memory to allocate buffers for output.
+
+EXAMPLES
+    _printf("Hello, %s!\n", "world"); // Output: Hello, world!
+    _printf("The answer is %d\n", 42);  // Output: The answer is 42
+
+SEE ALSO
+    printf(3)
+
+AUTHOR
+    [Your Name] 
