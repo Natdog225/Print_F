@@ -11,29 +11,15 @@ int print_string(const char *str)
 {
 	int count = 0;
 
-	while (*str)
+	if (s == NULL)
 	{
-		if (*str >= 32 && *str < 127)
-		{
-			_putchar(*str);
-			count++;
-		}
-		else
-		{
-			char first_hex_digit;
-			char second_hex_digit;
-
-			_putchar('\\');
-			_putchar('x');
-			first_hex_digit = (*str >> 4) & 0xF;
-			second_hex_digit = *str & 0xF;
-			_putchar(first_hex_digit < 10 ? first_hex_digit + '0' : first_hex_digit + 'A' - 10);
-			_putchar(second_hex_digit < 10 ? second_hex_digit + '0' : second_hex_digit + 'A' - 10);
-			count += 4;
-		}
-		str++;
+		s = "(null)";
 	}
-
+	while (*s)
+	{
+		_putchar(*s++);
+		count++;
+	}
 	return count;
 }
 
