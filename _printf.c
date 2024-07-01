@@ -56,8 +56,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			count += _putchar(format[i]);
+			i++;
 		}
-		i++;
 	}
 
 	va_end(args);
