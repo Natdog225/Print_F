@@ -42,20 +42,24 @@ int _printf(const char *format, ...)
 			{
 				count += _putchar('%');
 			}
+			else if (format[i] == 'r')
+			{
+				count += handle_r(args);
+			}
+				else
+				{
+					count += _putchar('%');
+					count += _putchar(format[i]);
+				}
+			}
 			else
 			{
-				count += _putchar('%');
 				count += _putchar(format[i]);
 			}
-		}
-		else
-		{
-			count += _putchar(format[i]);
+
+			i++;
 		}
 
-		i++;
+		va_end(args);
+		return (count);
 	}
-
-	va_end(args);
-	return (count);
-}
