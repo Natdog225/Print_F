@@ -49,7 +49,7 @@ int handle_int(va_list args)
 {
 	int num = va_arg(args, int); /* gets the integer argument from va_list*/
 	char buffer[40]; /* buffer to hold string rep of the int*/
-	int i = 0, j, negative = 0, count = 0;
+	int i = 0, j, count = 0;
 
 	if (num == 0) /*if the in is 0, print 0 and return1*/
 	{
@@ -62,14 +62,12 @@ int handle_int(va_list args)
 		_putchar('-');
 		_putchar('2');
 		num = 147483648; /* handles special case num is INT_MIN */
-		negative = 1;
 		count += 2; /* acouunts for - and 2.*/
 	}
 
 	else if (num < 0) /* handles the negative ints by printing -, makes the num positve */
 	{
 		_putchar('-');
-		negative = 1;
 		num = -num;
 		count += 1; /* accounts for -*/
 	}
