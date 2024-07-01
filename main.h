@@ -9,6 +9,7 @@
 int _putchar(char c);
 
 int _printf(const char *format, ...);
+int my_printf(const char *format, ...)
 
 /*Prototypes for helpers that will do each %s, %c.*/
 int handle_char(va_list args);
