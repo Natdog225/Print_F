@@ -48,6 +48,7 @@ int handle_char(va_list args)
 int handle_int(va_list args)
 {
 	int num = va_arg(args, int); /* gets the integer argument from va_list*/
+	unsigned int num_abs;
 	char buffer[40]; /* buffer to hold string rep of the int*/
 	int i = 0, j, count = 0;
 
@@ -57,20 +58,24 @@ int handle_int(va_list args)
 		return (1);
 	}
 
-	if (num == INT_MIN)
+	if (num < 0) /* handles the negative ints by printing -, makes the num positve */
 	{
 		_putchar('-');
-		_putchar('2');
-		num = 147483648; /* handles special case num is INT_MIN */
-		count += 2; /* acouunts for - and 2.*/
+		if (num == INT_MIN)
+		{
+			num_abs = (unsigned int)(INT_MAX) + 1; /*handles the INT_MIN special*/
+		}
+		else
+		{
+			num_abs = -num;
+		}
+		count++;
 	}
-
-	else if (num < 0) /* handles the negative ints by printing -, makes the num positve */
+	else
 	{
-		_putchar('-');
-		num = -num;
-		count += 1; /* accounts for -*/
+		num_abs = num;
 	}
+	
 	while (num != 0) /*convert the int to a string in reverse order*/
 	{
 		buffer[i++] = (num % 10) + '0';
