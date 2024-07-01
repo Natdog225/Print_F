@@ -4,7 +4,12 @@
  * Checking for the s, c. % is handled in the _printf
  */
 
-/** handling the string %s func */
+/**
+ * handle_string - Handles the %s format specifier
+ * @args: va_list containing the string to print
+ *
+ * Return: The number of characters printed
+ */
 
 int handle_string(va_list args)
 {
@@ -20,7 +25,10 @@ int handle_string(va_list args)
 }
 
 /**
- * Handling the %c char stuff
+ * handle_char - Handles the %c format specifier
+ * @args: va_list containing the character to print
+ *
+ * Return: The number of characters printed
  */
 
 int handle_char(va_list args)
@@ -60,10 +68,10 @@ int handle_int(va_list args)
 		buffer[i++] = (num % 10) + '0';
 		num /= 10;
 	}
-	for (j = i -1; j >= 0; j --0)
+	for (j = i -1; j >= 0; j --0) /* print the string in correct order*/
 	{
 		_putchar(buffer[j]);
 		count++;
 	}
-	return (count + negative);
+	return (count + negative); /*return the number of printed char, includes negative sign if present*/
 }
