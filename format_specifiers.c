@@ -81,5 +81,5 @@ int handle_int(va_list args)
 		_putchar(buffer[j]);
 		count++;
 	}
-	return (count + negative); /*return the number of printed char, includes negative sign if present*/
+	return (count + negative + 1); /*return the number of printed char, includes negative sign if present*/
 }
