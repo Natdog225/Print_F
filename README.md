@@ -1,3 +1,5 @@
+<a href="https://imgflip.com/i/8vmjky"></a></div>
+
 # Custom `_printf` Function
 
 This project implements a simplified version of the standard `printf` function in C. The custom `_printf` function provides basic formatted output capabilities and handles the following conversion specifiers: `%c`, `%s`, `%d`, and `%%`.
@@ -8,18 +10,8 @@ This project implements a simplified version of the standard `printf` function i
 - [Requirements](#requirements)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
-- [Examples](#examples)
-- [Implementation Details](#implementation-details)
-  - [Files](#files)
-  - [Function Prototypes](#function-prototypes)
-  - [_printf Function](#_printf-function)
-  - [Helper Functions](#helper-functions)
-  - [_putchar Function](#_putchar-function)
-- [Compilation](#compilation)
-- [Testing](#testing)
-- [Contribution](#contribution)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
+- [Tasks](#Tasks)
+- [Prototypes](#Prototypes)
 
 ## Overview
 
