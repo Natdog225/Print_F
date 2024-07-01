@@ -1,18 +1,10 @@
 #include "main.h"
 
 /**
- * Checking for the s, c and %.
+ * Checking for the s, c. % is handled in the _printf
  */
 
-/**handling the % */
-int handle_char(va_list args)
-{
-	char c = va_arg(args, int); /*retrieves the character argument*/
-	_putchar(c); /*prints the character*/
-	return(1); /* returns the number of printed characters*/
-}
-
-/** handling the string s func */
+/** handling the string %s func */
 
 int handle_string(va_list args)
 {
@@ -28,7 +20,7 @@ int handle_string(va_list args)
 }
 
 /**
- * Handling the c .char stuff
+ * Handling the %c char stuff
  */
 
 int handle_char(va_list args)
