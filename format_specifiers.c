@@ -57,7 +57,15 @@ int handle_int(va_list args)
 		return (1);
 	}
 
-	if (num < 0) /* handles the negative ints by printing -, makes the num positve */
+	if (num == INT_MIN)
+	{
+		_putchar('-');
+		_putchar('2');
+		num = 147483648; /* handles special case num is INT_MIN */
+		negative = 1;
+	}
+
+	else if (num < 0) /* handles the negative ints by printing -, makes the num positve */
 	{
 		_putchar('-');
 		negative = 1;
