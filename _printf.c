@@ -21,22 +21,16 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
+		if (format[i] == '%')
 		{
 			i++;
 			if (format[i] == 'c')
 			{
-				count += _putchar(va_arg(args, int));
+				count += handle_char(args);
 			}
 			else if (format[i] == 's')
 			{
-				char *str = va_arg(args, char *);
-				if (str == NULL)
-					str = "(null)";
-				while (*str != '\0')
-				{
-					count += _putchar(*str++);
-				}
+				count += handle_string(args);
 			}
 			else if (format[i] == 'd' || format[i] == 'i')
 			{
