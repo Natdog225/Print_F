@@ -68,7 +68,7 @@ int handle_int(va_list args)
 		buffer[i++] = (num % 10) + '0';
 		num /= 10;
 	}
-	for (j = i -1; j >= 0; j --0) /* print the string in correct order*/
+	for (j = i -1; j >= 0; j--) /* print the string in correct order*/
 	{
 		_putchar(buffer[j]);
 		count++;
