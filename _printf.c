@@ -47,10 +47,6 @@ int _printf(const char *format, ...)
 		{
 			count += _putchar(format[i]);
 		}
-		else
-		{
-			count += _putchar(format[i]);
-		}
 		i++;
 	}
 
