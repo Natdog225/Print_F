@@ -92,8 +92,9 @@ int search_print(const char *format, va_list args)
 		}
 		else
 		{
+			_putchar('%');
 			_putchar(*format);
-			count++;
+			count += 2;
 			format++;
 		}
 	}
