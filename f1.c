@@ -20,6 +20,9 @@ int print_string(const char *str)
 		}
 		else
 		{
+			char first_hex_digit;
+			char second_hex_digit;
+
 			_putchar('\\');
 			_putchar('x');
 			char first_hex_digit = (*str >> 4) & 0xF;
