@@ -49,10 +49,6 @@ int _printf(const char *format, ...)
 
 			i++;
 		}
-		else if (format[i] == 'S')
-		{
-			count += _putchar(format[i]);
-		}
 		else
 		{
 			count += _putchar(format[i]);
