@@ -25,8 +25,8 @@ int print_string(const char *str)
 
 			_putchar('\\');
 			_putchar('x');
-			char first_hex_digit = (*str >> 4) & 0xF;
-			char second_hex_digit = *str & 0xF;
+			first_hex_digit = (*str >> 4) & 0xF;
+			second_hex_digit = *str & 0xF;
 			_putchar(first_hex_digit < 10 ? first_hex_digit + '0' : first_hex_digit + 'A' - 10);
 			_putchar(second_hex_digit < 10 ? second_hex_digit + '0' : second_hex_digit + 'A' - 10);
 			count += 4;
