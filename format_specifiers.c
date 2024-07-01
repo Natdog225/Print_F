@@ -48,7 +48,7 @@ int handle_char(va_list args)
 int handle_int(va_list args)
 {
 	int num = va_arg(args, int); /* gets the integer argument from va_list*/
-	char buffer[20]; /* buffer to hold string rep of the int*/
+	char buffer[40]; /* buffer to hold string rep of the int*/
 	int i = 0, j, negative = 0, count = 0;
 
 	if (num == 0) /*if the in is 0, print 0 and return1*/
