@@ -76,10 +76,10 @@ int handle_int(va_list args)
 		num_abs = num;
 	}
 
-	while (num != 0) /*convert the int to a string in reverse order*/
+	while (num_abs != 0) /*convert the int to a string in reverse order*/
 	{
-		buffer[i++] = (num % 10) + '0';
-		num /= 10;
+		buffer[i++] = (num_abs % 10) + '0';
+		num_abs /= 10;
 	}
 	for (j = i -1; j >= 0; j--) /* print the string in correct order*/
 	{
