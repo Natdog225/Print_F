@@ -29,3 +29,41 @@ int handle_char(va_list args)
 	_putchar(c); /* prints the character*/
 	return (1); /* Returns the number of printed characters.*/
 }
+
+/**
+ * handle_int - Handles the %d and %i format specifiers
+ * @args: va_list containing the integer to print
+ *
+ * Return: The number of characters printed
+ */
+
+int handle_int(va_list args)
+{
+	int num = va_arg(args, int); /* gets the integer argument from va_list*/
+	char buffer[20]; /* buffer to hold string rep of the int*/
+	int i = 0, j, negative = 0, count = 0;
+
+	if (num == 0) /*if the in is 0, print 0 and return1*/
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	if (num < 0) /* handles the negative ints by printing -, makes the num positve */
+	{
+		_putchar('-');
+		negative = 1;
+		num = -num;
+	}
+	while (num != 0) /*convert the int to a string in reverse order*/
+	{
+		buffer[i++] = (num % 10) + '0';
+		num /= 10;
+	}
+	for (j = i -1; j >= 0; j --0)
+	{
+		_putchar(buffer[j]);
+		count++;
+	}
+	return (count + negative);
+}
