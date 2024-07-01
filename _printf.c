@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				char *str = va_arg(args, char *);
+				if (str == NULL)
+					str = "(null)";
 				while (*str != '\0')
 				{
 					count += _putchar(*str++);
