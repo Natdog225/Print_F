@@ -12,6 +12,7 @@ This project implements a simplified version of the standard `printf` function i
 - [Usage](#usage)
 - [Tasks](#Tasks)
 - [Prototypes](#Prototypes)
+- [Authors](#Authors)
 
 ## Overview
 
@@ -48,3 +49,25 @@ To use the custom `_printf` function, follow these steps:
 1. Include the `main.h` header file in your source file.
 2. Compile your source file with the provided `_printf` implementation files.
 3. Call the `_printf` function in your code as you would with the standard `printf`.
+
+## Tasks
+
+## Prototypes
+
+	int _putchar(char c);
+
+	int _printf(const char *format, ...);
+
+	int handle_char(va_list args);
+	
+	int handle_string(va_list args);
+	
+	int handle_int(va_list args);
+	
+	int handle_r(va_list args);
+
+
+## Authors
+
+- John Wilson
+- Nathan Wilson

@@ -25,7 +25,10 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '\0')
-				break;
+			{
+				va_end(args);
+				return (-1);
+			}
 			if (format[i] == 'c')
 			{
 				count += handle_char(args);
