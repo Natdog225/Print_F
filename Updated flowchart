@@ -1,0 +1,58 @@
+             Start
+               |
+               v
+       Is format NULL?
+         /       \
+      Yes         No
+     /             \
+  Return -1     Initialize
+               Variables
+                 |
+                 v
+         Loop through format
+                 |
+                 v
+          Is format[i] '%'?
+         /       \
+      Yes         No
+     /             \
+ Increment i     Print format[i]
+                 Update count
+     /                \
+format[i+1] \0?        v
+     /       \
+  Yes         No
+ Break loop   |
+              v
+ Is format[i] 'c'?
+     /       \
+   Yes        No
+  /            \
+Call handle_char  |
+Update count    Is format[i] 's'?
+                 /       \
+               Yes        No
+              /            \
+      Call handle_string    |
+       Update count    Is format[i] 'd' or 'i'?
+                         /       \
+                       Yes        No
+                      /            \
+              Call handle_int     Is format[i] '%'
+               Update count         /       \
+                                  Yes        No
+                                 /            \
+                         Print '%', Update count
+                                |       Print '%', format[i]
+                                |       Update count
+                                v
+                            Increment i
+                                |
+                                v
+                            End Loop
+                                |
+                                v
+                      Call va_end(args)
+                                |
+                                v
+                            Return count
