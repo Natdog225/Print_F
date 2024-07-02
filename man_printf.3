@@ -1,40 +1,52 @@
-AME
-    _printf - formatted output conversion
-
-SYNOPSIS
-    #include "main.h"
-
-    int _printf(const char *format, ...);
-
-DESCRIPTION
-    _printf produces output according to a format string, which is written to the standard output (stdout). It supports various format specifiers for different data types.
-
-FORMAT SPECIFIERS
-    %c  Print a single character.
-    %s  Print a string of characters.
-    %d  Print a decimal integer.
-    %i  Print an integer in base 10.
-    %%  Print a percent sign.
-    %r  Print a string in reverse order. (Custom specifier)
-    ...
-
-RETURN VALUE
-    Upon successful completion, _printf returns the number of characters printed 
-	(excluding the null byte used to end output to strings). 
-	If an output error is encountered, a negative value is returned.
-
-ERRORS
-    _printf may fail if:
-
-    * An invalid format specifier is encountered.
-    * There is insufficient memory to allocate buffers for output.
-
-EXAMPLES
-    _printf("Hello, %s!\n", "world"); // Output: Hello, world!
-    _printf("The answer is %d\n", 42);  // Output: The answer is 42
-
-SEE ALSO
-    printf(3)
-
-AUTHOR
-    [Nathan Wilson & John Wilson] 
+TH _PRINTF 3 "June 2024" "Custom _printf" "Custom Library Functions"
+.SH NAME
+_printf \- formatted output conversion
+.SH SYNOPSIS
+.B #include "main.h"
+.PP
+.BI "int _printf(const char *format, ...);"
+.SH DESCRIPTION
+.B _printf
+produces output according to a format string, which is written to the standard output (stdout). It supports various format specifiers for different data types.
+.SH FORMAT SPECIFIERS
+.TP
+.B %c
+Print a single character.
+.TP
+.B %s
+Print a string of characters.
+.TP
+.B %d
+Print a decimal integer.
+.TP
+.B %i
+Print an integer in base 10.
+.TP
+.B %%
+Print a percent sign.
+.TP
+.B %r
+Print a string in reverse order. (Custom specifier)
+.TP
+.B ...
+Other format specifiers can be added as needed.
+.SH RETURN VALUE
+Upon successful completion,
+.B _printf
+returns the number of characters printed (excluding the null byte used to end output to strings). If an output error is encountered, a negative value is returned.
+.SH ERRORS
+.B _printf
+may fail if:
+.IP \[bu] 2
+An invalid format specifier is encountered.
+.IP \[bu] 2
+There is insufficient memory to allocate buffers for output.
+.SH EXAMPLES
+.EX
+_printf("Hello, %s!\n", "world"); // Output: Hello, world!
+_printf("The answer is %d\n", 42);  // Output: The answer is 42
+.EE
+.SH SEE ALSO
+.B printf (3)
+.SH AUTHOR
+Nathan Wilson & John Wilson
