@@ -124,8 +124,8 @@ This is the helper to handle blank spaces.
 
 	int handle_r(va_list args);
 
-"Got a long list of ex-lovers, they'll tell you I'm insane, but I've got a blank space, baby, and I'll write your name."
--- Taylor Swift, (probably)
+> "Got a long list of ex-lovers, they'll tell you I'm insane, but I've got a blank space, baby, and I'll write your name."
+> - Taylor Swift, (probably)
 
 ## Authors
 
