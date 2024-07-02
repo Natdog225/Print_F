@@ -101,22 +101,29 @@ Create a man page for your function.
 ## Prototypes
 
 This is the putchar function that prints a character.
+
 	int _putchar(char c);
 
 This is the main code that will print things.
+
 	int _printf(const char *format, ...);
 
 This is the helper to handle printing calling a char.
+
 	int handle_char(va_list args);
 	
 This is the helper to handle printing strings and digits.
+
 	int handle_string(va_list args);
 
 This is the helper to handle printing int's.
+
 	int handle_int(va_list args);
 	
 This is the helper to handle blank spaces.
+
 	int handle_r(va_list args);
+
 "Got a long list of ex-lovers, they'll tell you I'm insane, but I've got a blank space, baby, and I'll write your name."
 -- Taylor Swift, (probably)
 
