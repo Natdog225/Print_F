@@ -15,54 +15,56 @@ int _printf(const char *format, ...)
 	int count = 0;
 	int i = 0;
 
-	if (format == NULL)
+	if (format == NULL) /* Check for NULL format string */
 		return (-1);
 
-	va_start(args, format);
-	while (format[i] != '\0')
+	va_start(args, format); /* Initialize variable arguments */
+
+	while (format[i] != '\0') /* Loop through format string */
 	{
-		if (format[i] == '%')
+		if (format[i] == '%') /* Check for format specifier */
 		{
 			i++;
-			if (format[i] == '\0')
+			if (format[i] == '\0') /* Handle unexpected end of format string */
 			{
 				va_end(args);
 				return (-1);
 			}
+
 			if (format[i] == 'c')
 			{
-				count += handle_char(args);
+				count += handle_char(args); /* Handle character specifier */
 			}
 			else if (format[i] == 's')
 			{
-				count += handle_string(args);
+				count += handle_string(args); /* Handle string specifier */
 			}
 			else if (format[i] == 'd' || format[i] == 'i')
 			{
-				count += handle_int(args);
+				count += handle_int(args); /* Handle integer specifiers */
 			}
 			else if (format[i] == '%')
 			{
-				count += _putchar('%');
+				count += _putchar('%'); /* Print literal '%' */
 			}
-			else if (format[i] == 'r')
+			else if (format[i] == 'r') /* Added to catch reverse string specifier*/
 			{
 				count += handle_r(args);
 			}
-				else
-				{
-					count += _putchar('%');
-					count += _putchar(format[i]);
-				}
-			}
 			else
 			{
-				count += _putchar(format[i]);
+				count += _putchar('%');		  /*Prints a literal '%'*/
+				count += _putchar(format[i]); /* Prints any other specifier as a literal */
 			}
-
-			i++;
+		}
+		else
+		{
+			count += _putchar(format[i]); /* Print non-specifier character */
 		}
 
-		va_end(args);
-		return (count);
+		i++;
 	}
+
+	va_end(args); /* Clean up variable arguments */
+	return (count);
+}
